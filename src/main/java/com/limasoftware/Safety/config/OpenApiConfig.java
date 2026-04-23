@@ -19,11 +19,11 @@ public class OpenApiConfig {
                         .description("API REST para gerenciamento de agendamentos médicos. " +
                                 "Permite criar, editar, cancelar e concluir agendamentos, " +
                                 "com validação de conflitos de horário e intervalo de datas.")
-                        .termsOfService("https://github.com/seu-usuario/safety")
+                        .termsOfService("https://github.com/devglhrm/safety")
                         .contact(new Contact()
                                 .name("Guilherme Lima")
-                                .url("https://github.com/seu-usuario")
-                                .email("seu-email@exemplo.com"))
+                                .url("https://github.com/devglhrm/safety")
+                                .email("guilimadev19@gmail.com"))
                         .license(new License()
                                 .name("MIT")
                                 .url("https://opensource.org/licenses/MIT")));
