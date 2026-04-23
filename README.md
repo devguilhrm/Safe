@@ -233,6 +233,7 @@ Safety/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/limasoftware/Safety/
+│   │   │   ├── config/          # Configurações (OpenAPI/Swagger)
 │   │   │   ├── controller/      # Controladores REST
 │   │   │   ├── dto/             # Data Transfer Objects
 │   │   │   ├── enums/           # Enumerações (Status, UserRole, SchedulingType)
@@ -246,10 +247,55 @@ Safety/
 │   │       └── db/migration/    # Scripts Flyway
 │   └── test/
 │       └── java/com/limasoftware/Safety/
+│           ├── controller/      # Testes de controller
+│           ├── service/         # Testes de service
+│           └── mapper/          # Testes de mapper
 ├── pom.xml
-└── README.md
+├── README.md
+├── run-tests.sh     # Script para rodar testes (Linux/Mac)
+└── run-tests.bat    # Script para rodar testes (Windows)
 ```
 
+## Testes Unitários
+
+O projeto possui testes unitários cobrindo as principais funcionalidades:
+
+### Classes Testadas
+
+| Classe | Testes | Cobertura |
+|--------|--------|-----------|
+| `SchedulingService` | 14 testes | Create, Update, Delete, Finish, Search, List |
+| `SchedulingController` | 12 testes | Todos os endpoints da API |
+| `SchedulingMapper` | 6 testes | Conversões e merge de dados |
+
+### Executando os Testes
+
+**Windows:**
+```bash
+run-tests.bat
+# ou
+mvn clean test
+```
+
+**Linux/Mac:**
+```bash
+./run-tests.sh
+# ou
+mvn clean test
+```
+
+### Estrutura dos Testes
+
+- **SchedulingServiceTest**: Testa regras de negócio, validações e detecção de conflitos
+- **SchedulingControllerTest**: Testa endpoints HTTP com MockMvc
+- **SchedulingMapperTest**: Testa conversões entre DTO e Entity
+
+### Frameworks Utilizados
+
+- JUnit 5 (Jupiter)
+- Mockito (mocks e spies)
+- Spring Boot Test (@WebMvcTest, @SpringBootTest)
+- AssertJ (asserções fluentes)
 
 ## Licença
 
